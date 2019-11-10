@@ -1,0 +1,1548 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass revtex4-1
+\begin_preamble
+\usepackage{amsfonts}
+\usepackage{palatino}
+\usepackage{etoolbox}
+\end_preamble
+\options showpacs,preprintnumbers,amsmath,amssymb,aps,notitlepage,
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Computer Vision on the D-Wave 2000Q
+\end_layout
+
+\begin_layout Author
+
+\lang british
+Pankaj Gupta
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+Adobe Systems Incorporated
+\end_layout
+
+\begin_layout Author
+
+\lang british
+Nike Dattani
+\end_layout
+
+\begin_layout Author Email
+n.dattani@cfa.harvard.edu
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+Harvard-Smithsonian Center for Astrophysics
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+Department of Chemistry and Chemical Biology, McMaster University
+\end_layout
+
+\begin_layout Affiliation
+
+\lang british
+Fukui Institute for Fundamental Chemistry, Kyoto University, Kyoto, Japan
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If you get robbed and the only way to get your wallet or purse back is for
+ police to determine the identity of the thief based on a blurry surveillance
+ video of a moving suspect, you might wish that a computer can 
+\begin_inset Quotes eld
+\end_inset
+
+calculate
+\begin_inset Quotes erd
+\end_inset
+
+ a sharp and clear version of the required image which shows clearly who
+ it is that has your money.
+ This is more complicated than the simple face-recognition algorithms used
+ by Facebook for automatic tagging, or by Google for image search, because
+ it involves first predicting what the unblurry version of an image should
+ look like, and may involve video footage rather than simply stationary
+ photographs.
+ 
+\end_layout
+
+\begin_layout Standard
+The state-of-the-art method for solving this problem in industry is by solving
+ a QUBO problem, and some examples from the classical-computer QUBO literature
+ are below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -9mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\bar under
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\bar under
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<row bottomspace="2mm">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\bar under
+QUBO based in-painting by from Ref.
+ [
+\color blue
+1
+\color inherit
+].
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\bar under
+QUBO based in-painting by from Ref.
+ [
+\color blue
+1
+\color inherit
+].
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename lyx_images/pasted4.png
+	width 20text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename lyx_images/pasted1.png
+	width 20.02text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename lyx_images/pasted5.png
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row bottomspace="2mm">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\bar under
+QUBO based de-blurring from Ref.
+ [
+\color blue
+2
+\color inherit
+].
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\bar under
+QUBO based de-noising from Ref.
+ [
+\color blue
+3
+\color inherit
+].
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename lyx_images/pasted6.png
+	width 20text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename lyx_images/pasted7.png
+	width 20.2text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/test_orig_noisy.pgm
+	width 13text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test_orig_result.pgm
+	width 13text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore this is a real-world problem that is 
+\begin_inset Quotes eld
+\end_inset
+
+perfect
+\begin_inset Quotes erd
+\end_inset
+
+ for the D-Wave machines, because the industry standard for solving the
+ problem is to run a QUBO optimization on a classical computer.
+ Image de-noising is performed by detectives for recovering partial finger-print
+s, by museums for reconstructing antique paintings, and by doctors for medical
+ imaging, but in these cases the number of pixels (and hence the number
+ of binary variables in the QUBO problem) is small.
+ For terabyte-sized telescope images of galaxies, inter-stellar media, and
+ possible life-containing exo-planets, runtimes are colossal and we welcome
+ any speed-up even if only by a constant factor of 10 or even 2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The algorithm works by minimizing two functions of binary variables simultaneous
+ly
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Fields of Experts(FoE) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "FoE"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+f_{C}(X_{C}) & =\sum_{i=1}^{K}\alpha_{i}\text{log}(1+\frac{1}{2}(J_{i}\cdot X_{C})^{2})\label{eq:CliqueMinimization}\\
+f_{v}(X_{v}) & =\frac{(N_{v}-X_{v})^{2}}{2\sigma^{2}}
+\end{align}
+
+\end_inset
+
+The first function was calibrated by using billions of good and bad images
+ such that the minimization of this function removes as much noise as possible.
+ Minimizing the second function helps to maintain fidelity to the original
+ image (its minimum occurs when the new pixel 
+\begin_inset Formula $N_{v}$
+\end_inset
+
+ at location 
+\begin_inset Formula $v$
+\end_inset
+
+ is the same as the original pixel 
+\begin_inset Formula $X_{v}$
+\end_inset
+
+, but it is minimized simultaneously with Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CliqueMinimization"
+
+\end_inset
+
+ so our new pixels will not be exactly the same).
+ 
+\begin_inset Formula $C$
+\end_inset
+
+ denotes a clique of size 
+\begin_inset Formula $2\times2$
+\end_inset
+
+, yielding 4-local interactions in the Hamiltonian.
+ More accurate results can be obtained by using, for example, a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ mask for the image processing, but this has never been applied in the literatur
+e since it would require quadratizing a 9-local Hamiltonian, which would
+ greatly increase the number of auxiliary qubits required.
+\end_layout
+
+\begin_layout Standard
+The number of binary variables (logical qubits) 
+\begin_inset Formula $Q_{L}$
+\end_inset
+
+ is equal to the number of pixels in the image.
+ At each iteration, we would either accept the pixel from 
+\begin_inset Formula $I$
+\end_inset
+
+ or from 
+\begin_inset Formula $P$
+\end_inset
+
+ depending on whether the variable associated with that pixel is 0 or 1.
+ The clique terms in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CliqueMinimization"
+
+\end_inset
+
+ are quartic.
+ We used auxiliary qubits to quadratize this quartic function, and what
+ we are left with is a quadratic unconstrained boolean optimization (QUBO)
+ problem involving 
+\begin_inset Formula $Q_{2}$
+\end_inset
+
+ qubits coupled at most quadratically.
+ Once we have quadratized the problem into QUBO form, we can chimerize it
+ so that it can run on D-Wave annealers.
+ Efficient chimerization is an active area of research, with new methods
+ being proposed frequently, however we estimate the number of physical qubits
+ 
+\begin_inset Formula $Q_{P}$
+\end_inset
+
+ needed by 
+\begin_inset Formula $\mathcal{O}(Q_{2}^{2})$
+\end_inset
+
+, which we know is an upper bound in the case for chimerizing a fully connected
+ graph
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $K_{Q_{Q}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Therefore, with 
+\begin_inset Formula $Q_{A}=2048$
+\end_inset
+
+ qubits available, we can have at least 
+\begin_inset Formula $Q_{2}=45$
+\end_inset
+
+ qubits in the QUBO problem, so we will explore images of size 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ pixels (
+\begin_inset Formula $Q_{L}=9$
+\end_inset
+
+ logical qubits) and 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ pixels (
+\begin_inset Formula $Q_{L}=16$
+\end_inset
+
+ logical qubits).
+ We do not investigate smaller images because the size of the image processing
+ mask is 
+\begin_inset Formula $2\times2$
+\end_inset
+
+.
+ Below we show that the computer vision algorithm still works even for small
+ images:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/test_orig.pgm
+	scale 75
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test_orig_noisy.pgm
+	scale 75
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test_orig_result.pgm
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/test25.pgm
+	scale 550
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test25_noisy.pgm
+	scale 550
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test25_result.pgm
+	scale 550
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/test20.pgm
+	scale 650
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test20_noisy.pgm
+	scale 650
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test20_result.pgm
+	scale 650
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/test15.pgm
+	scale 850
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test15_noisy.pgm
+	scale 850
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test15_result.pgm
+	scale 850
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/test10.pgm
+	scale 1150
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test10_noisy.pgm
+	scale 1150
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/test10_result.pgm
+	scale 1150
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Chimerization of a QUBO problem for denoising a 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ image
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=\left(\begin{array}{ccc}
+201 & 180 & 195\\
+183 & 209 & 210\\
+173 & 171 & 162
+\end{array}\right)P=\left(\begin{array}{ccc}
+242 & 230 & 255\\
+234 & 252 & 239\\
+238 & 204 & 241
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Resulting image obtained using HOCR 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+I_{result}=\left(\begin{array}{ccc}
+239 & 241 & 252\\
+237 & 240 & 242\\
+236 & 234 & 234
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Initial number of binary variables (logical qubits): 
+\begin_inset Formula $Q_{L}=9$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Number of qubits after quadratization: 29 
+\end_layout
+
+\begin_layout Standard
+Graph connectivity for 29 spin Ising problem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{MaxMatrixCols}{45}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginEnvironment{bmatrix}{
+\backslash
+setlength{
+\backslash
+arraycolsep}{0pt}} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{-1cm}
+\end_layout
+
+\end_inset
+
+
+\size tiny
+
+\begin_inset Formula $M=\ensuremath{\begin{bmatrix}11768 & 14864 & 0 & 3284 & 14344 & 0 & 0 & 0 & 0 & \text{-}11820 & 0 & 0 & 0 & 0 & \text{-}7288 & \text{-}13068 & \text{-}12018 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+14864 & 44700 & 10500 & 1170 & 60370 & 27952 & 0 & 0 & 0 & \text{-}11820 & \text{-}29144 & 0 & 0 & \text{-}2504 & 0 & \text{-}13068 & \text{-}12018 & 0 & \text{-}32400 & \text{-}20472 & \text{-}12064 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 10500 & 33716 & 0 & 3694 & 24318 & 0 & 0 & 0 & 0 & \text{-}29144 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}1762 & 0 & \text{-}20472 & \text{-}12064 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+3284 & 1170 & 0 & 111320 & 12740 & 0 & \text{-}620 & 16326 & 0 & \text{-}11820 & 0 & \text{-}17192 & 0 & \text{-}2504 & \text{-}7288 & 0 & \text{-}12018 & 0 & 0 & 0 & 0 & 0 & \text{-}41416 & \text{-}7756 & \text{-}2760 & 0 & 0 & 0 & 0\\
+14344 & 60370 & 3694 & 12740 & 78878 & 1478 & 10878 & 11602 & 4486 & \text{-}11820 & \text{-}29144 & \text{-}17192 & \text{-}3770 & \text{-}2504 & \text{-}7288 & \text{-}13068 & 0 & \text{-}1762 & \text{-}32400 & 0 & \text{-}12064 & \text{-}9702 & 0 & \text{-}7756 & \text{-}2760 & 0 & \text{-}816 & \text{-}4060 & \text{-}9072\\
+0 & 27952 & 24318 & 0 & 1478 & 29988 & 0 & 11230 & 4238 & 0 & \text{-}29144 & 0 & \text{-}3770 & 0 & 0 & 0 & 0 & \text{-}1762 & \text{-}32400 & \text{-}20472 & 0 & 0 & 0 & 0 & 0 & \text{-}4268 & 0 & \text{-}4060 & \text{-}9072\\
+0 & 0 & 0 & \text{-}620 & 10878 & 0 & 45574 & 1250 & 0 & 0 & 0 & \text{-}17192 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}9702 & \text{-}41416 & 0 & \text{-}2760 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 16326 & 11602 & 11230 & 1250 & 143330 & 7026 & 0 & 0 & \text{-}17192 & \text{-}3770 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}9702 & \text{-}41416 & \text{-}7756 & 0 & \text{-}4268 & \text{-}816 & 0 & \text{-}9072\\
+0 & 0 & 0 & 0 & 4486 & 4238 & 0 & 7026 & 5396 & 0 & 0 & 0 & \text{-}3770 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}4268 & \text{-}816 & \text{-}4060 & 0\\
+\text{-}11820 & \text{-}11820 & 0 & \text{-}11820 & \text{-}11820 & 0 & 0 & 0 & 0 & 35460 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \text{-}29144 & \text{-}29144 & 0 & \text{-}29144 & \text{-}29144 & 0 & 0 & 0 & 0 & 87432 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & \text{-}17192 & \text{-}17192 & 0 & \text{-}17192 & \text{-}17192 & 0 & 0 & 0 & 25788 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & \text{-}3770 & \text{-}3770 & 0 & \text{-}3770 & \text{-}3770 & 0 & 0 & 0 & 11310 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \text{-}2504 & 0 & \text{-}2504 & \text{-}2504 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2504 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}7288 & 0 & 0 & \text{-}7288 & \text{-}7288 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 7288 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}13068 & \text{-}13068 & 0 & 0 & \text{-}13068 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 13068 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}12018 & \text{-}12018 & 0 & \text{-}12018 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 12018 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & \text{-}1762 & 0 & \text{-}1762 & \text{-}1762 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1762 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \text{-}32400 & 0 & 0 & \text{-}32400 & \text{-}32400 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 32400 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \text{-}20400 & \text{-}20472 & 0 & 0 & \text{-}20472 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 20472 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \text{-}12064 & \text{-}12064 & 0 & \text{-}12064 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 12064 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & \text{-}9702 & 0 & \text{-}9702 & \text{-}9704 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 9702 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & \text{-}41416 & 0 & 0 & \text{-}41416 & \text{-}41416 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 41416 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & \text{-}7756 & \text{-}7756 & 0 & 0 & \text{-}7756 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 15512 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & \text{-}2760 & \text{-}2760 & 0 & \text{-}2760 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5520 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & \text{-}4268 & 0 & \text{-}4268 & \text{-}4268 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4268 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & \text{-}816 & 0 & 0 & \text{-}816 & \text{-}816 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1632 & 0 & 0\\
+0 & 0 & 0 & 0 & \text{-}4060 & \text{-}4060 & 0 & 0 & \text{-}4060 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4060 & 0\\
+0 & 0 & 0 & 0 & \text{-}9072 & \text{-}9072 & 0 & \text{-}9072 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 9072
+\end{bmatrix}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function to optimize, corresponding to the above matrix is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $11768x_{1}+14864x_{1}x_{2}+3284x_{1}x_{4}+14344x_{1}x_{5}-11820x_{1}x_{10}-7288x_{1}x_{15}-13068x_{1}x_{16}-12018x_{1}x_{17}+44700x_{2}+10500x_{2}x_{3}+1170x_{2}x_{4}+60370x_{2}x_{5}+27952x_{2}x_{6}-11820x_{2}x_{10}-29144x_{2}x_{11}-2504x_{2}x_{14}-13068x_{2}x_{16}-12018x_{2}x_{17}-32400x_{2}x_{19}-20472x_{2}x_{20}-12064x_{2}x_{21}+33716x_{3}+3694x_{3}x_{5}+24318x_{3}x_{6}-29144x_{3}x_{11}-1762x_{3}x_{18}-20472x_{3}x_{20}-12064x_{3}x_{21}+111320x_{4}+12740x_{4}x_{5}-620x_{4}x_{7}+16326x_{4}x_{8}-11820x_{4}x_{10}-17192x_{4}x_{12}-2504x_{4}x_{14}-7288x_{4}x_{15}-12018x_{4}x_{17}-41416x_{4}x_{23}-7756x_{4}x_{24}-2760x_{4}x_{25}+78878x_{5}+1478x_{5}x_{6}+10878x_{5}x_{7}+11602x_{5}x_{8}+4486x_{5}x_{9}-11820x_{5}x_{10}-29144x_{5}x_{11}-17192x_{5}x_{12}-3770x_{5}x_{13}-2504x_{5}x_{14}-7288x_{5}x_{15}-13068x_{5}x_{16}-1762x_{5}x_{18}-32400x_{5}x_{19}-12064x_{5}x_{21}-9704x_{5}x_{22}-7756x_{5}x_{24}-2760x_{5}x_{25}-816x_{5}x_{27}-4060x_{5}x_{28}-9072x_{5}x_{29}+29988x_{6}+11230x_{6}x_{8}+4238x_{6}x_{9}-29144x_{6}x_{11}-3770x_{6}x_{13}-1762x_{6}x_{18}-32400x_{6}x_{19}-20472x_{6}x_{20}-4268x_{6}x_{26}-4060x_{6}x_{28}-9072x_{6}x_{29}+45574x_{7}+1250x_{7}x_{8}-17192x_{7}x_{12}-9702x_{7}x_{22}-41416x_{7}x_{23}-2760x_{7}x_{25}+143330x_{8}+7026x_{8}x_{9}-17192x_{8}x_{12}-3770x_{8}x_{13}-9702x_{8}x_{22}-41416x_{8}x_{23}-7756x_{8}x_{24}-4268x_{8}x_{26}-816x_{8}x_{27}-9072x_{8}x_{29}+5396x_{9}-3770x_{9}x_{13}-4268x_{9}x_{26}-816x_{9}x_{27}-4060x_{9}x_{28}+35460x_{10}+87432x_{11}+25788x_{12}+11310x_{13}+2504x_{14}+7288x_{15}+13068x_{16}+12018x_{17}+1762x_{18}+32400x_{19}+20472x_{20}+12064x_{21}+9702x_{22}+41416x_{23}+15512x_{24}+5520x_{25}+4268x_{26}+1632x_{27}+4060x_{28}+9072x_{29}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The embeddings obtained for the Chimera architecture are: 
+\begin_inset Formula 
+\begin{equation}
+\begin{matrix}\textit{\emph{logical qubit 0}}: & [339,467,595,723,851,864,973,979,981,989,992,997,1005,1013] & \textit{\emph{chain length : 14}}\\
+\textit{\emph{logical qubit 1}}: & [590,594,598,606,614,617,622,630,638,745] & \textit{\emph{chain length : 10}}\\
+\textit{\emph{logical qubit 2}}: & [251,252,379,382,507,635,636,763,891,1019,1021,1147,1148] & \textit{\emph{chain length : 13}}\\
+\textit{\emph{logical qubit 3}}: & [331,332,340,344,348,354,356,364,372,380,482,610,738,866] & \textit{\emph{chain length : 14}}\\
+\textit{\emph{logical qubit 4}}: & [242,370,498,626,628,754,882,1010,1138] & \textit{\emph{chain length : 9}}\\
+\textit{\emph{logical qubit 5}}: & [346,351,359,367,375,383,474,602,605,730,858,986] & \textit{\emph{chain length : 12}}\\
+\textit{\emph{logical qubit 6}:} & [243,371,499,627,755,759,767,883,1011,1139] & \textit{\emph{chain length : 10}}\\
+\textit{\emph{logical qubit 7}}: & [578,633,706,711,761,834,838,846,854,862,870,878,886,889,894] & \textit{\emph{chain length : 15}}\\
+\textit{\emph{logical qubit 8}}: & [234,237,245,253,362,490,618,620,743,746,751,874,1002,1130] & \textit{\emph{chain length : 14}}\\
+\textit{\emph{logical qubit 9}}: & [241,369,497,621,625,629,637,753,881,1009,1137] & \textit{\emph{chain length : 11}}\\
+\text{\emph{logical qubit 10}:} & [459,587,715,843,844,852,860,971,1099,1100,1108,1116,1124,1132,1140] & \text{\emph{chain length : 15}}\\
+\text{\emph{logical qubit 11}}: & [232,360,488,616,744,872,876,884,892,1000,1128] & \text{\emph{chain length : 11}}\\
+\text{\emph{logical qubit 12}}: & [200,204,212,217,220,228,236,244,328,456,584,589,597,712,840] & \text{\emph{chain length : 15}}\\
+\text{\emph{logical qubit 13}}: & [448,450,452,460,466,468,476,484,492,500,508,576,704,710] & \text{\emph{chain length : 14}}\\
+\text{\emph{logical qubit 14}}: & [219,347,350,358,366,374,475,588,596,603,604,612,731,859] & \text{\emph{chain length : 14}}\\
+\text{\emph{logical qubit 15}}: & [336,464,592,720,848,976,982,990,998,1006,1014,1022] & \text{\emph{chain length : 12}}\\
+\text{\emph{logical qubit 16}}: & [718,726,734,742,750,752,758,766] & \text{\emph{chain length : 8}}\\
+\text{\emph{logical qubit 17}}: & [504,632,717,725,733,741,749,757,760,765] & \text{\emph{chain length : 10}}\\
+\text{\emph{logical qubit 18}}: & [361,462,470,478,486,489,491,494,502,510,619,747,875,1003] & \text{\emph{chain length : 14}}\\
+\text{\emph{logical qubit 19}}: & [352,461,469,477,480,485,493,501,505,509,608,736] & \text{\emph{chain length : 12}}\\
+\text{\emph{logical qubit 20}}: & [378,506,634,762,845,853,861,869,873,877,885,890,893,1001] & \text{\emph{chain length : 14}}\\
+\text{\emph{logical qubit 21}}: & [708,716,724,732,740,748,756,764] & \text{\emph{chain length : 8}}\\
+\text{\emph{logical qubit 22}}: & [345,473,601,729,735,857,985,988,996,1004,1012,1020] & \text{\emph{chain length : 12}}\\
+\text{\emph{logical qubit 23}}: & [472,600,728,842,847,855,856,863,871,879,887,895] & \text{\emph{chain length : 12}}\\
+\text{\emph{logical qubit 24}}: & [337,465,593,721,849,977,983,991,999,1007,1015,1023] & \text{\emph{chain length : 12}}\\
+\text{\emph{logical qubit 25}}: & [355,463,471,479,483,487,495,503,511,611,739,867] & \text{\emph{chain length : 12}}\\
+\text{\emph{logical qubit 26}}: & [330,333,341,349,357,365,368,373,381,458,496,586,624,714,719] & \text{\emph{chain length : 15}}\\
+\text{\emph{logical qubit 27}}: & [457,585,591,599,607,615,623,631,639,713,841] & \text{\emph{chain length : 11}}\\
+\text{\emph{logical qubit 28}}: & [225,353,481,609,613,737,865,868,993,1121,1125,1133,1141,1149] & \text{\emph{chain length : 14}}
+\end{matrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The embedded problem is:
+\begin_inset VSpace defskip
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\size tiny
+{(866, 870): 16326.0, (344, 350): -1822.0, (362, 367): 4238.0, (354, 358):
+ -1822.0, (587, 590): -29144.0, (628, 636): 3694.0, (627, 628): 5439.0, (620,
+ 628): 2243.0, (857, 862): -41416.0, (1009, 1013): -11820.0, (361, 367): -16200.0,
+ (1011, 1012): -41416.0, (992, 998): -4356.0, (723, 726): -12018.0, (738, 742):
+ -12018.0, (891, 893): -4021.3333333333335, (602, 606): 27952.0, (882, 884):
+ -17192.0, (626, 631): -4060.0, (634, 636): -4021.3333333333335, (883, 884):
+ -17192.0, (865, 870): -9072.0, (355, 359): -2134.0, (1010, 1014): -13068.0,
+ (371, 372): -620.0, (490, 495): -2134.0, (370, 373): -408.0, (597, 605): -3770.0,
+ (858, 862): 11230.0, (474, 479): -2134.0, (634, 638): -6032.0, (498, 500):
+ -2504.0, (595, 598): 14854.0, (489, 617): -16200.0, (625, 630): -5910.0, (379,
+ 383): 24318.0, (242, 245): 2243.0, (761, 764): -4851.0, (866, 871): -3878.0,
+ (872, 878): -8596.0, (711, 719): -816.0, (234, 236): -3770.0, (754, 759):
+ 5439.0, (761, 767): 625.0, (602, 607): -4060.0, (882, 885): -12064.0, (369,
+ 372): -11820.0, (339, 340): 3284.0, (242, 244): -3770.0, (754, 756): -9702.0,
+ (474, 478): -16200.0, (867, 870): -4268.0, (466, 594): -2504.0, (1011, 1015):
+ -2760.0, (856, 862): -2585.3333333333335, (632, 636): -881.0, (858, 860):
+ -29144.0, (378, 382): -4021.3333333333335, (979, 982): -4356.0, (1138, 1141):
+ -9072.0, (840, 846): -3770.0, (592, 598): -13068.0, (595, 596): -7288.0, (608,
+ 614): -20472.0, (635, 638): 10500.0, (624, 628): -408.0, (482, 484): -2504.0,
+ (370, 375): 1478.0, (626, 630): 60370.0, (362, 365): -816.0, (755, 756): -9702.0,
+ (739, 743): -2134.0, (626, 629): -5910.0, (345, 348): -41416.0, (507, 509):
+ -20472.0, (617, 621): -5910.0, (360, 364): -17192.0, (352, 359): -10236.0,
+ (370, 374): -7288.0, (745, 873): -6032.0, (610, 612): -1822.0, (763, 765):
+ -881.0, (874, 878): 7026.0, (619, 622): -16200.0, (618, 623): -4060.0, (337,
+ 340): -2760.0, (1138, 1140): -29144.0, (882, 886): 11602.0, (976, 981): -4356.0,
+ (883, 886): 625.0, (498, 502): -32400.0, (889, 892): -8596.0, (610, 614):
+ 1170.0, (474, 477): -10236.0, (842, 846): -2585.3333333333335, (882, 887):
+ -7756.0, (353, 359): -4536.0, (347, 348): -1822.0, (745, 750): -12018.0, (889,
+ 895): -2585.3333333333335, (754, 757): -1762.0, (625, 628): -5910.0, (344,
+ 472): -3878.0, (605, 613): -4536.0, (370, 372): 12740.0, (1010, 1015): -2760.0,
+ (706, 708): -4851.0, (1140, 1148): -29144.0, (1010, 1013): 14344.0, (730,
+ 733): -1762.0}
+\end_layout
+
+\begin_layout Section
+Chimerization of a QUBO problem for denoising a 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ image
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I=\left(\begin{array}{cccc}
+224 & 255 & 253 & 255\\
+124 & 220 & 243 & 250\\
+255 & 255 & 255 & 255\\
+106 & 95 & 115 & 127
+\end{array}\right)P=\left(\begin{array}{cccc}
+189 & 255 & 254 & 255\\
+97 & 224 & 233 & 255\\
+255 & 241 & 251 & 250\\
+118 & 109 & 127 & 171
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Resulting image using HOCR
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+I_{\text{result}}=\left(\begin{array}{cccc}
+172 & 242 & 248 & 255\\
+153 & 232 & 239 & 251\\
+211 & 241 & 245 & 253\\
+127 & 124 & 152 & 155
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Initial number of binary variables (logical qubits): 
+\begin_inset Formula $Q_{L}=16$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Number of qubits after quadratization: 
+\begin_inset Formula $Q_{Q}=44$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Graph connectivity for 44-spin ising problem:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{MaxMatrixCols}{45}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginEnvironment{bmatrix}{
+\backslash
+setlength{
+\backslash
+arraycolsep}{0pt}} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{-2cm}
+\end_layout
+
+\end_inset
+
+
+\size tiny
+
+\begin_inset Formula $M=\begin{bmatrix}7560 & \negmedspace66 & 0 & 0 & \text{-}3595 & 15 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}24 & \text{-}1 & \text{-}79 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+66 & \negmedspace\text{-}271 & 52 & 0 & 41 & 374 & \text{-}748 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}152 & 0 & 0 & 0 & \text{-}4 & 0 & \text{-}1 & \text{-}79 & 0 & \text{-}273 & \text{-}498 & \text{-}95 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace52 & 3469 & 328 & 0 & 189 & 1288 & 154 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}152 & \text{-}400 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}283 & 0 & \text{-}498 & \text{-}95 & 0 & \text{-}356 & \text{-}214 & \text{-}190 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 328 & 867 & 0 & 0 & \text{-}551 & 161 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}400 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}43 & 0 & \text{-}214 & \text{-}190 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}3595 & \negmedspace41 & 0 & 0 & 12795 & 379 & 0 & 0 & \text{-}4522 & \text{-}955 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}206 & 0 & \text{-}4 & \text{-}24 & 0 & \text{-}79 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}98 & \text{\text{-}}191 & \text{-}184 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+15 & \negmedspace374 & 189 & 0 & 379 & 765 & \text{-}1430 & 0 & 244 & 38 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}152 & 0 & \text{-}206 & 0 & \text{-}4 & \text{-}24 & \text{-}1 & 0 & \text{-}283 & \text{-}273 & 0 & \text{-}95 & 0 & 0 & 0 & 0 & \text{-}155 & 0 & \text{-}191 & \text{-}184 & \text{-}587 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace\text{-}748 & 1288 & \text{-}551 & 0 & \text{-}1430 & 57165 & 151 & 0 & \text{-}1597 & 0 & 4668 & 0 & 0 & 0 & 0 & \text{-}152 & \text{-}400 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}283 & \text{-}273 & \text{-}498 & 0 & \text{-}43 & \text{-}356 & 0 & \text{-}190 & 0 & 0 & 0 & 0 & \text{-}587 & \text{-}903 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 154 & 161 & 0 & 0 & 151 & 4168 & 0 & 0 & 0 & 1069 & 0 & 0 & 0 & 0 & 0 & \text{-}400 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}43 & \text{-}356 & \text{-}214 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}903 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & \text{-}4522 & 244 & 0 & 0 & 21202 & \text{-}113 & 0 & 0 & 3614 & \text{-}195 & 0 & 0 & 0 & 0 & \text{-}206 & \text{-}2534 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}155 & \text{-}98 & 0 & \text{-}184 & 0 & 0 & 0 & \text{-}4108 & \text{-}2446 & \text{-}2034 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & \text{-}955 & 38 & \text{-}1597 & 0 & \text{-}113 & 32094 & 0 & 0 & 2817 & \text{-}2819 & 2504 & 0 & 0 & 0 & \text{-}206 & \text{-}2534 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}155 & \text{-}98 & \text{-}191 & 0 & \text{-}587 & 0 & \text{-}2781 & 0 & \text{-}2446 & \text{-}2034 & \text{-}4096 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 4668 & 1069 & 0 & 0 & 0 & 7223 & 0 & 0 & 558 & \text{-}1024 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}903 & 0 & 0 & 0 & 0 & 0 & \text{-}274\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 3614 & 2817 & 0 & 0 & 456 & 3898 & 0 & 0 & 0 & 0 & 0 & \text{-}2534 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}2781 & \text{-}4108 & 0 & \text{-}2034 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}195 & \text{-}2819 & 0 & 0 & 3898 & 15395 & 1762 & 0 & 0 & 0 & 0 & \text{-}2534 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}2781 & \text{-}4108 & \text{-}2446 & 0 & \text{-}4096 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2504 & 0 & 558 & 0 & 1762 & \text{-}618 & 1185 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}4096 & \text{-}274\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}1024 & 0 & 0 & 1185 & 1875 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}274\\
+0 & \negmedspace\text{-}152 & \text{-}152 & 0 & 0 & \text{-}152 & \text{-}152 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 456 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & \text{-}400 & \text{-}400 & 0 & 0 & \text{-}400 & \text{-}400 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 600 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & \text{-}206 & \text{-}206 & 0 & 0 & \text{-}206 & \text{-}206 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 618 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}2534 & \text{-}2534 & 0 & 0 & \text{-}2534 & \text{-}2534 & 0 & 0 & 0 & 0 & 0 & 7602 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace\text{-}4 & 0 & 0 & \text{-}4 & \text{-}4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}24 & \negmedspace0 & 0 & 0 & \text{-}24 & \text{-}24 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 48 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}1 & \negmedspace\text{-}1 & 0 & 0 & 0 & \text{-}1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\text{-}79 & \negmedspace\text{-}79 & 0 & 0 & \text{-}79 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 158 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & \text{-}283 & 0 & 0 & \text{-}283 & \text{-}283 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 283 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace\text{-}273 & 0 & 0 & 0 & \text{-}273 & \text{-}273 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 546 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace\text{-}498 & \text{-}498 & 0 & 0 & 0 & \text{-}498 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 498 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace\text{-}95 & \text{-}95 & 0 & 0 & \text{-}95 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 95 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & \text{-}43 & 0 & 0 & \text{-}43 & \text{-}43 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 43 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & \text{-}356 & 0 & 0 & 0 & \text{-}356 & \text{-}356 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 356 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & \text{-}214 & \text{-}214 & 0 & 0 & 0 & \text{-}214 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 428 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & \text{-}190 & \text{-}190 & 0 & 0 & \text{-}190 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 380 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & \text{-}155 & 0 & 0 & \text{-}155 & \text{-}155 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 155 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & \text{-}98 & 0 & 0 & 0 & \text{-}98 & \text{-}98 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 196 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & \text{-}191 & \text{-}191 & 0 & 0 & 0 & \text{-}191 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 191 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & \text{-}184 & \text{-}184 & 0 & 0 & \text{-}184 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 184 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & \text{-}587 & \text{-}587 & 0 & 0 & \text{-}587 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 587 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & \text{-}903 & \text{-}903 & 0 & 0 & 0 & \text{-}903 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1806 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}2781 & 0 & 0 & \text{-}2781 & \text{-}2781 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2781 & 0 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}4108 & 0 & 0 & 0 & \text{-}4108 & \text{-}4108 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 4108 & 0 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}2446 & \text{-}2446 & 0 & 0 & 0 & \text{-}2446 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2446 & 0 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}2034 & \text{-}2034 & 0 & 0 & \text{-}2034 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2034 & 0 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}4096 & 0 & 0 & 0 & \text{-}4096 & \text{-}4096 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 8192 & 0\\
+0 & \negmedspace0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \text{-}274 & 0 & 0 & \text{-}274 & \text{-}274 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 274
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function to optimize, corresponding to the above matrix is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $7560x_{1}+66x_{1}x_{2}-3595x_{1}x_{5}+15x_{1}x_{6}-24x_{1}x_{22}-x_{1}x_{23}-79x_{1}x_{24}-271x_{2}+52x_{2}x_{3}+41x_{2}x_{5}+374x_{2}x_{6}-748x_{2}x_{7}-152x_{2}x_{17}-4x_{2}x_{21}-x_{2}x_{23}-79x_{2}x_{24}-273x_{2}x_{26}-498x_{2}x_{27}-95x_{2}x_{28}+3469x_{3}+328x_{3}x_{4}+189x_{3}x_{6}+1288x_{3}x_{7}+154x_{3}x_{8}-152x_{3}x_{17}-400x_{3}x_{18}-283x_{3}x_{25}-498x_{3}x_{27}-95x_{3}x_{28}-356x_{3}x_{30}-214x_{3}x_{31}-190x_{3}x_{32}+867x_{4}-551x_{4}x_{7}+161x_{4}x_{8}-400x_{4}x_{18}-43x_{4}x_{29}-214x_{4}x_{31}-190x_{4}x_{32}+12795x_{5}+379x_{5}x_{6}-4522x_{5}x_{9}-955x_{5}x_{10}-206x_{5}x_{19}-4x_{5}x_{21}-24x_{5}x_{22}-79x_{5}x_{24}-98x_{5}x_{34}-191x_{5}x_{35}-184x_{5}x_{36}+765x_{6}-1430x_{6}x_{7}+244x_{6}x_{9}+38x_{6}x_{10}-152x_{6}x_{17}-206x_{6}x_{19}-4x_{6}x_{21}-24x_{6}x_{22}-x_{6}x_{23}-283x_{6}x_{25}-273x_{6}x_{26}-95x_{6}x_{28}-155x_{6}x_{33}-191x_{6}x_{35}-184x_{6}x_{36}-587x_{6}x_{37}+57165x_{7}+151x_{7}x_{8}-1597x_{7}x_{10}+4668x_{7}x_{12}-152x_{7}x_{17}-400x_{7}x_{18}-283x_{7}x_{25}-273x_{7}x_{26}-498x_{7}x_{27}-43x_{7}x_{29}-356x_{7}x_{30}-190x_{7}x_{32}-587x_{7}x_{37}-903x_{7}x_{38}+4168x_{8}+1069x_{8}x_{12}-400x_{8}x_{18}-43x_{8}x_{29}-256x_{8}x_{30}-214x_{8}x_{31}-903x_{8}x_{38}+21202x_{9}-113x_{9}x_{10}+3614x_{9}x_{13}-195x_{9}x_{14}-206x_{9}x_{19}-2534x_{9}x_{20}-155x_{9}x_{33}-98x_{9}x_{34}-184x_{9}x_{36}-4108x_{9}x_{40}-2446x_{9}x_{41}-2034x_{9}x_{42}+32094x_{10}+2817x_{10}x_{13}-2819x_{10}x_{14}+2504x_{10}x_{15}-206x_{10}x_{19}-2534x_{10}x_{20}-155x_{10}x_{33}-98x_{10}x_{34}-191x_{10}x_{35}-587x_{10}x_{37}-2781x_{10}x_{39}-2446x_{10}x_{41}-2034x_{10}x_{42}-4096x_{10}x_{43}+7223x_{12}+558x_{12}x_{15}-1024x_{12}x_{16}-903x_{12}x_{38}-274x_{12}x_{44}+456x_{13}+3898x_{13}x_{14}-2534x_{13}x_{20}-2781x_{13}x_{39}-4108x_{13}x_{40}-2034x_{13}x_{42}+15395x_{14}+1762x_{14}x_{15}-2534x_{14}x_{20}-2781x_{14}x_{39}-4108x_{14}x_{40}-2446x_{14}x_{41}-4096x_{14}x_{43}-618x_{15}+1185x_{15}x_{16}-4096x_{15}x_{43}-274x_{15}x_{44}+1875x_{16}-274x_{16}x_{44}+456x_{17}+600x_{18}+618x_{19}+7602x_{20}+4x_{21}+48x_{22}+x_{23}+158x_{24}+283x_{25}+546x_{26}+498x_{27}+95x_{28}+43x_{29}+356x_{30}+428x_{31}+380x_{32}+155x_{33}+196x_{34}+191x_{35}+184x_{36}+587x_{37}+1806x_{38}+2781x_{39}+4108x_{40}+2446x_{41}+2034x_{42}+8192x_{43}+274x_{44}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\begin{bmatrix}7560 & \negthickspace66 & 0 & 0 & -3595 & 15 & 0 & 0\\
+66 & \negthickspace\text{-}271 & 52 & 0 & 41 & 374 & -748 & 0\\
+0 & \negthickspace52 & 3469 & 328 & 0 & 189 & 1288 & 154\\
+0 & \negthickspace0 & 328 & 867 & 0 & 0 & -551 & 161\\
+\text{-}3595 & \negthickspace41 & 0 & 0 & \mathllap{}12795 & 379 & 0 & 0\\
+15 & \negthickspace374 & 189 & 0 & 379 & 765 & -1430 & 0\\
+0 & \negthickspace-748 & 1288 & -551 & 0 & -1430 & 57165 & 151\\
+0 & \negthickspace0 & 154 & 161 & 0 & 0 & 151 & 4168\\
+0 & \negthickspace0 & 0 & 0 & -4522 & 244 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & -955 & 38 & -1597 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 4668 & 1069\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace-152 & -152 & 0 & 0 & -152 & -152 & 0\\
+0 & \negthickspace0 & -400 & -400 & 0 & 0 & -400 & -400\\
+0 & \negthickspace0 & 0 & 0 & -206 & -206 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace-4 & 0 & 0 & -4 & -4 & 0 & 0\\
+-24 & \negthickspace0 & 0 & 0 & -24 & -24 & 0 & 0\\
+-1 & \negthickspace-1 & 0 & 0 & 0 & -1 & 0 & 0\\
+-79 & \negthickspace-79 & 0 & 0 & -79 & 0 & 0 & 0\\
+0 & \negthickspace0 & -283 & 0 & 0 & -283 & -283 & 0\\
+0 & \negthickspace-273 & 0 & 0 & 0 & -273 & -273 & 0\\
+0 & \negthickspace-498 & -498 & 0 & 0 & 0 & -498 & 0\\
+0 & \negthickspace-95 & -95 & 0 & 0 & -95 & 0 & 0\\
+0 & \negthickspace0 & 0 & -43 & 0 & 0 & -43 & -43\\
+0 & \negthickspace0 & -356 & 0 & 0 & 0 & -356 & -356\\
+0 & \negthickspace0 & -214 & -214 & 0 & 0 & 0 & -214\\
+0 & \negthickspace0 & -190 & -190 & 0 & 0 & -190 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & -155 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & -98 & 0 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & -191 & -191 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & -184 & -184 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & -587 & -587 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & -903 & -903\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & \negthickspace0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The embeddings are: 
+\end_layout
+
+\begin_layout Standard
+
+\size tiny
+\begin_inset Formula 
+\begin{equation}
+\begin{matrix}\textit{logical qubit 0}: & [720,848,953,956,964,968,972,976,980,984,988,996,1004,1012,1020,1081,1112,1209,1337,1465,1593,1721,1849] & \textit{chain length : 23 }\\
+\textit{logical qubit 1}: & [728,818,820,828,836,844,852,856,860,868,876,884,892,946,1074,1202,1330,1458,1586,1714,1842] & \textit{chain length : 21 }\\
+\textit{logical qubit 2}: & [1496,1583,1591,1599,1607,1615,1623,1624,1631,1639,1647,1655,1663,1752] & \textit{chain length : 14 }\\
+\textit{logical qubit 3}: & [738,866,994,1122,1219,1222,1227,1230,1238,1246,1250,1254,1262,1270,1278,1355,1478,1483,1486,1611,1739] & \textit{chain length : 21 }\\
+\textit{logical qubit 4}: & [1362,1455,1463,1471,1479,1487,1490,1495,1503,1511,1519,1527,1535,1618,1746] & \textit{chain length : 15 }\\
+\textit{logical qubit 5}: & [1345,1473,1601,1710,1718,1726,1729,1734,1742,1750,1758,1766,1774,1782,1790] & \textit{chain length : 15 }\\
+\textit{logical qubit 6}: & [747,875,1003,1127,1131,1135,1143,1146,1151,1259,1387,1515,1643,1771] & \textit{chain length : 14 }\\
+\textit{logical qubit 7}: & [731,859,987,1111,1115,1118,1119,1126,1134,1142,1150,1243,1371,1499,1627,1755,1883] & \textit{chain length : 17 }\\
+\textit{logical qubit 8}: & [752,880,1008,1136,1264,1392,1520,1648,1776,1904,1908,1916] & \textit{chain length : 12 }\\
+\textit{logical qubit 9}: & [705,819,821,829,833,837,845,853,861,869,877,885,893,947,1075,1203,1331,1459,1587,1715,1843] & \textit{chain length : 21 }\\
+\textit{logical qubit 10:} & [744,749,872,1000,1128,1256,1384,1512,1640,1644,1768,1896,2024,2030,2032,2038,2046] & \textit{chain length : 17 }\\
+\textit{logical qubit 11}: & [1700,1708,1716,1724,1732,1740,1748,1756,1764,1772,1780,1788] & \textit{chain length : 12 }\\
+\textit{logical qubit 12}: & [682,684,692,700,708,712,716,724,732,740,748,756,764,810,938,1066,1194,1322,1450,1578,1706,1834] & \textit{chain length : 22 }\\
+\textit{logical qubit 13}: & [753,757,765,881,1009,1137,1265,1393,1521,1649,1777,1905] & \textit{chain length : 12 }\\
+\textit{logical qubit 14}: & [737,865,993,1121,1249,1312,1316,1324,1332,1340,1348,1356,1364,1368,1369,1372,1377,1379,1380,1388,1396,1404,1440,1568,1696] & \textit{chain length : 25 }\\
+\textit{logical qubit 15}: & [723,817,822,830,838,846,850,851,854,862,870,878,886,894,945,1073,1201,1329,1457,1585,1713,1841] & \textit{chain length : 22 }\\
+\textit{logical qubit 16}: & [730,735,743,751,759,767,858,986,1114,1242,1370,1498,1502,1626,1754,1882] & \textit{chain length : 16 }\\
+\textit{logical qubit 17}: & [714,842,970,1098,1226,1325,1333,1341,1349,1354,1357,1365,1373,1381,1389,1397,1405,1482,1610,1738] & \textit{chain length : 20 }\\
+\textit{logical qubit 18}: & [715,843,955,959,967,971,975,983,991,999,1007,1015,1023,1083,1099,1211,1339,1467,1595,1723,1851] & \textit{chain length : 21 }\\
+\textit{logical qubit 19}: & [683,686,694,702,710,718,726,734,742,750,758,766,811,939,1067,1195,1323,1451,1579,1707,1835] & \textit{chain length : 21 }\\
+\textit{logical qubit 20}: & [1452,1460,1468,1476,1484,1489,1492,1500,1505,1508,1516,1524,1532,1633,1761] & \textit{chain length : 15 }\\
+\textit{logical qubit 21}: & [1497,1582,1590,1598,1606,1614,1622,1625,1630,1638,1646,1654,1662,1753] & \textit{chain length : 14 }\\
+\textit{logical qubit 22}: & [755,883,1011,1139,1267,1395,1523,1651,1779,1907,2035,2036,2044] & \textit{chain length : 13 }\\
+\textit{logical qubit 23}: & [721,849,954,958,966,974,977,982,990,998,1006,1014,1022,1082,1210,1338,1466,1594,1722,1850] & \textit{chain length : 20 }\\
+\textit{logical qubit 24}: & [754,882,1010,1138,1266,1394,1522,1650,1778,1906,2034,2037,2045] & \textit{chain length : 13 }\\
+\textit{logical qubit 25}: & [707,808,815,823,831,835,839,847,855,863,871,879,887,895,936,1064,1192,1320,1448,1576,1704,1832] & \textit{chain length : 22 }\\
+\textit{logical qubit 26}: & [745,873,1001,1129,1257,1385,1510,1513,1518,1526,1534,1641,1769] & \textit{chain length : 13 }\\
+\textit{logical qubit 27}: & [760,888,1016,1144,1272,1400,1528,1656,1784,1912,2040] & \textit{chain length : 11 }\\
+\textit{logical qubit 28}: & [763,891,1019,1147,1275,1403,1531,1652,1659,1660,1787,1915] & \textit{chain length : 12 }\\
+\textit{logical qubit 29}: & [1612,1617,1620,1628,1745,1824,1831,1833,1839,1847,1855,1863,1871,1873,1879,1887,1895,1897,1899,1903,1911,1919] & \textit{chain length : 22 }\\
+\textit{logical qubit 30}: & [713,841,969,1097,1225,1327,1335,1343,1351,1353,1359,1367,1375,1383,1391,1399,1407,1481,1609,1737] & \textit{chain length : 20 }\\
+\textit{logical qubit 31}: & [746,874,1002,1125,1130,1133,1141,1149,1258,1386,1514,1642,1770,1898] & \textit{chain length : 14 }\\
+\textit{logical qubit 32:} & [729,857,985,1080,1084,1092,1100,1106,1108,1113,1116,1124,1132,1140,1148,1208,1241,1336,1464,1592,1720,1848] & \textit{chain length : 22 }\\
+\textit{logical qubit 33}: & [736,864,992,1120,1248,1252,1260,1268,1276,1376,1504,1632,1636,1760] & \textit{chain length : 14 }\\
+\textit{logical qubit 34}: & [1363,1449,1453,1461,1469,1477,1485,1491,1493,1501,1509,1517,1525,1533,1577,1705] & \textit{chain length : 16 }\\
+\textit{logical qubit 35}: & [1703,1711,1719,1727,1735,1736,1743,1751,1759,1767,1775,1783,1791] & \textit{chain length : 13 }\\
+\textit{logical qubit 36}: & [739,867,944,949,957,965,973,978,981,989,995,997,1005,1013,1021,1072,1123,1200,1251,1328,1456,1584,1712,1840] & \textit{chain length : 24 }\\
+\textit{logical qubit 37}: & [1507,1635,1709,1717,1725,1733,1741,1749,1757,1763,1765,1773,1781,1789] & \textit{chain length : 14 }\\
+\textit{logical qubit 38}: & [704,832,960,1088,1199,1207,1215,1216,1223,1231,1239,1247,1255,1263,1271,1279,1344,1472,1600,1728,1856] & \textit{chain length : 21 }\\
+\textit{logical qubit 39}: & [1360,1488,1581,1589,1597,1605,1613,1616,1619,1621,1629,1637,1645,1653,1744,1747,1875,1878,1886,1894,1902,1910,1918] & \textit{chain length : 23 }\\
+\textit{logical qubit 40}: & [1326,1334,1342,1350,1352,1358,1366,1374,1378,1382,1390,1398,1406,1480,1506,1608,1634,1762] & \textit{chain length : 18 }\\
+\textit{logical qubit 41}: & [1197,1205,1213,1218,1221,1229,1237,1240,1245,1253,1261,1269,1277,1346,1474,1602,1730,1858] & \textit{chain length : 18 }\\
+\textit{logical qubit 42}: & [1274,1347,1402,1475,1530,1603,1658,1731,1786,1837,1845,1853,1857,1859,1861,1869,1877,1885,1893,1901,1909,1914,1917] & \textit{chain length : 23 }\\
+\textit{logical qubit 43}: & [761,889,1017,1145,1273,1401,1529,1657,1661,1785,1913,2041] & \textit{chain length : 12 }
+\end{matrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The embedded problem is: 
+\end_layout
+
+\begin_layout Standard
+
+\size tiny
+{(1752, 1758): 94.5, (1122, 1126): 80.5, (1392, 1398): -2446.0, (1008, 1015):
+ -206.0, (1130, 1135): -63.3333, (1618, 1622): -12.0, (1387, 1389): -400.0,
+ (1123, 1127): -293.5, (1393, 1396): 1762.0, (1843, 1845): -4096.0, (1755,
+ 1757): -903.0, (832, 837): -1390.5, (1753, 1758): -12.0, (1129, 1135): -249.0,
+ (875, 876): -748.0, (976, 982): -13.16667, (1771, 1773): -903.0, (1723, 1726):
+ -206.0, (752, 756): 3614.0, (682, 686): -844.6667, (1355, 1357): -133.3333,
+ (1586, 1591): 52.0, (1131, 1133): -63.3333, (1496, 1502): -76.0, (704, 708):
+ -1390.5, (1402, 1404): -2048.0, (1473, 1476): -2.0, (883, 884): -1.0, (865,
+ 870): 592.5, (1776, 1783): -184.0, (1225, 1230): -71.3333, (1627, 1631): 154.0,
+ (1771, 1772): 4668.0, (1138, 1143): -283.0, (818, 823): -91.0, (1642, 1647):
+ -190.0, (889, 894): -274.0, (1763, 1764): -903.0, (1355, 1359): -71.3333, (1626,
+ 1631): -76.0, (1904, 1910): -2054.0, (1721, 1726): 15.0, (1905, 1909): -4096.0,
+ (1473, 1479): 189.5, (705, 710): -2534.0, (1203, 1205): -2034.0, (835, 836):
+ -91.0, (968, 974): -13.16667, (857, 861): -155.0, (1736, 1742): -92.0, (1785,
+ 1788): -274.0, (1610, 1615): -400.0, (864, 869): -98.0, (1715, 1718): 38.0,
+ (1147, 1151): -43.0, (728, 735): -76.0, (1746, 1751): -184.0, (752, 758):
+ -2534.0, (683, 684): -844.6667, (1449, 1455): -63.66674, (1465, 1471): -3595.0,
+ (1489, 1495): -1.333333, (1259, 1262): -275.5, (1520, 1527): -4522.0, (1371,
+ 1373): -400.0, (1755, 1756): 1069.0, (1459, 1461): -191.0, (1011, 1012): -1.0,
+ (1720, 1726): -155.0, (1714, 1718): 374.0, (1705, 1710): -95.5, (1704, 1710):
+ -273.0, (1194, 1197): -2034.0, (1601, 1607): 94.5, (880, 885): -113.0, (1329,
+ 1332): 592.5, (954, 956): -13.16667, (1761, 1766): -2.0, (1264, 1269): -2034.0,
+ (753, 756): 3898.0, (1611, 1615): 328.0, (1905, 1908): -97.5, (1656, 1663):
+ -95.0, (1003, 1005): -293.5, (1347, 1348): -2048.0, (1146, 1149): -63.3333,
+ (1641, 1647): -498.0, (1754, 1758): -152.0, (865, 869): 1252.0, (1482, 1486):
+ -133.3333, (1265, 1271): -2781.0, (747, 751): -152.0, (1771, 1899): -356.0,
+ (888, 892): -95.0, (858, 860): -76.0, (1146, 1150): 50.3333, (1601, 1606):
+ -12.0, (1779, 1782): -1.0, (1490, 1493): -63.66674, (867, 869): -293.5, (712,
+ 718): -844.6667, (977, 980): -13.16667, (1371, 1375): -214.0, (1649, 1653):
+ -2054.0, (1466, 1471): -79.0, (881, 885): -2819.0, (1275, 1278): -43.0, (1136,
+ 1140): -155.0, (1490, 1492): -1.333333, (1784, 1790): -95.0, (1778, 1782):
+ -283.0, (752, 757): -97.5, (1147, 1150): -43.0, (1264, 1268): -98.0, (1505,
+ 1511): -1.333333, (1331, 1332): 1252.0, (1458, 1463): 41.0, (1593, 1598):
+ -24.0, (1481, 1486): -71.3333, (1746, 1750): 189.5, (1776, 1782): 244.0, (1258,
+ 1262): -95.0, (1491, 1495): -63.66674, (1393, 1398): -2446.0, (843, 845):
+ -206.0, (1131, 1134): 50.3333, (1497, 1503): -12.0, (849, 852): -79.0, (1194,
+ 1199): -1390.5, (753, 758): -2534.0, (1515, 1518): -249.0, (1467, 1471): -206.0,
+ (1401, 1404): -274.0, (1119, 1127): 50.3333, (1459, 1463): -955.0, (1712,
+ 1718): -587.0, (1473, 1477): -95.5, (1504, 1511): -98.0, (1226, 1230): -133.3333,
+ (875, 879): -273.0, (856, 863): -91.0, (1617, 1623): -178.0, (1627, 1628):
+ -178.0, (875, 877): -1597.0, (1122, 1127): -275.5, (1905, 1910): -2054.0, (1624,
+ 1628): -178.0, (1578, 1581): -4108.0, (1696, 1700): 558.0, (947, 949): -293.5,
+ (1713, 1716): -1024.0, (856, 984): 33.0, (1648, 1653): -2054.0, (705, 708):
+ 2817.0, (1771, 1774): -1430.0, (1643, 1647): 1288.0, (1122, 1125): -95.0, (1729,
+ 1735): -92.0, (1650, 1655): -283.0, (1883, 1887): -178.0, (1609, 1615): -214.0,
+ (953, 958): -13.16667, (984, 990): -13.16667, (1243, 1246): 80.5, (848, 852):
+ 33.0, (1203, 1207): -1390.5, (1458, 1460): -4.0, (873, 876): -498.0, (1331,
+ 1334): -2446.0}
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "FoE"
+literal "true"
+
+\end_inset
+
+ Roth, Stefan, and Michael J.
+ Black.
+ 
+\emph on
+Fields of experts: A framework for learning image priors.
+
+\emph default
+ In Computer Vision and Pattern Recognition, 2005.
+ CVPR 2005.
+ IEEE Computer Society Conference on, vol.
+ 2, pp.
+ 860-867.
+ IEEE, 2005.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+literal "true"
+
+\end_inset
+
+n Computer Vision and Pattern Recognition, 2005.
+ CVPR 2005.
+ IEEE Computer Society Conference on, vol.
+ 2, pp.
+ 860-867.
+ IEEE, 2005.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "ishikawa"
+literal "true"
+
+\end_inset
+
+ Ishikawa, Hiroshi.
+ 
+\emph on
+Transformation of general binary MRF minimization to the first-order case.
+
+\emph default
+ IEEE transactions on pattern analysis and machine intelligence 33.6 (2011):
+ 1234-1249.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "HOCR"
+literal "true"
+
+\end_inset
+
+ Ishikawa, Hiroshi.
+ 
+\emph on
+Higher-order clique reduction in binary graph cut.
+
+\emph default
+ Computer Vision and Pattern Recognition, 2009.
+ CVPR 2009.
+ IEEE Conference on.
+ IEEE, 2009.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{MaxMatrixCols}{43}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align}
+\begin{pmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 &  &  &  &  &  &  & 0\\
+0 & 0 & 0 & 0 &  &  &  &  &  &  & 0\\
+0 &  &  &  &  &  &  &  &  &  & 0\\
+0 &  &  &  & 0 & 0 & 0 &  &  &  & 0 & 0 & 0\\
+0 &  &  &  & 0 & 0 & 0 &  &  &  & 0 & 0 & 0\\
+0 &  &  &  & 0 & 0 & 0 &  &  &  & 0 & 0 & 0\\
+0 &  &  &  & 0 & 0 & 0 &  &  &  & 0 & 0 & 0\\
+0 &  &  &  & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{pmatrix}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

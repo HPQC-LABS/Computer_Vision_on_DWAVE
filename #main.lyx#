@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,7 +10,7 @@
 \usepackage{palatino}
 \usepackage{etoolbox}
 \end_preamble
-\options showpacs,preprintnumbers,amsmath,amssymb,aps,notitlepage, 
+\options showpacs,preprintnumbers,amsmath,amssymb,aps,notitlepage,
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -27,6 +27,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -56,6 +58,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -68,7 +71,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -104,7 +110,6 @@ Nike Dattani
 \end_layout
 
 \begin_layout Author Email
-
 n.dattani@cfa.harvard.edu
 \end_layout
 
@@ -245,14 +250,14 @@ QUBO based in-painting by from Ref.
 
 
 \begin_inset Graphics
-	filename pasted4.png
+	filename lyx_images/pasted4.png
 	width 20text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename pasted1.png
+	filename lyx_images/pasted1.png
 	width 20.02text%
 
 \end_inset
@@ -267,7 +272,7 @@ QUBO based in-painting by from Ref.
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename pasted5.png
+	filename lyx_images/pasted5.png
 	width 48text%
 
 \end_inset
@@ -326,14 +331,14 @@ QUBO based de-noising from Ref.
 
 
 \begin_inset Graphics
-	filename pasted6.png
+	filename lyx_images/pasted6.png
 	width 20text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename pasted7.png
+	filename lyx_images/pasted7.png
 	width 20.2text%
 
 \end_inset
@@ -348,14 +353,14 @@ QUBO based de-noising from Ref.
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename test_orig_noisy.pgm
+	filename images/test_orig_noisy.pgm
 	width 13text%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test_orig_result.pgm
+	filename images/test_orig_result.pgm
 	width 13text%
 
 \end_inset
@@ -416,6 +421,7 @@ Fields of Experts(FoE)
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FoE"
+literal "true"
 
 \end_inset
 
@@ -1383,6 +1389,7 @@ The embedded problem is:
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
 key "FoE"
+literal "true"
 
 \end_inset
 
@@ -1405,6 +1412,7 @@ Fields of experts: A framework for learning image priors.
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
 key "key-3"
+literal "true"
 
 \end_inset
 
@@ -1420,6 +1428,7 @@ n Computer Vision and Pattern Recognition, 2005.
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
 key "ishikawa"
+literal "true"
 
 \end_inset
 
@@ -1437,6 +1446,7 @@ Transformation of general binary MRF minimization to the first-order case.
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
 key "HOCR"
+literal "true"
 
 \end_inset
 
