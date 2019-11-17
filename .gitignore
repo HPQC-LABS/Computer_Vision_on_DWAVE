@@ -1,3 +1,8 @@
 .DS_Store
 utilities_notebook/.ipython_checkpoints/*
 .git/*
+#main.lyx#
+main.lyx~
+papers/*
+!papers/README.md
+code/*

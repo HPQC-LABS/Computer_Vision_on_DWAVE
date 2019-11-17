@@ -602,21 +602,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename test_orig.pgm
+	filename images/test_orig.pgm
 	scale 75
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test_orig_noisy.pgm
+	filename images/test_orig_noisy.pgm
 	scale 75
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test_orig_result.pgm
+	filename images/test_orig_result.pgm
 	scale 75
 
 \end_inset
@@ -626,21 +626,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename test25.pgm
+	filename images/test25.pgm
 	scale 550
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test25_noisy.pgm
+	filename images/test25_noisy.pgm
 	scale 550
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test25_result.pgm
+	filename images/test25_result.pgm
 	scale 550
 
 \end_inset
@@ -650,21 +650,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename test20.pgm
+	filename images/test20.pgm
 	scale 650
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test20_noisy.pgm
+	filename images/test20_noisy.pgm
 	scale 650
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test20_result.pgm
+	filename images/test20_result.pgm
 	scale 650
 
 \end_inset
@@ -674,21 +674,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename test15.pgm
+	filename images/test15.pgm
 	scale 850
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test15_noisy.pgm
+	filename images/test15_noisy.pgm
 	scale 850
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test15_result.pgm
+	filename images/test15_result.pgm
 	scale 850
 
 \end_inset
@@ -698,21 +698,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename test10.pgm
+	filename images/test10.pgm
 	scale 1150
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test10_noisy.pgm
+	filename images/test10_noisy.pgm
 	scale 1150
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename test10_result.pgm
+	filename images/test10_result.pgm
 	scale 1150
 
 \end_inset
